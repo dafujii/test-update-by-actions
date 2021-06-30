@@ -10,5 +10,6 @@ jobs:
           echo test > $(date +%s).txt
           git config user.name github-actions
           git config user.email github-actions@example.com
-          git commit -am "add file"
+          git add -A
+          git commit -m "add file"
           git push origin master
