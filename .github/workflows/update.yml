@@ -1,0 +1,14 @@
+name: Update by GitHub Actions
+on: workflow_dispatch
+
+jobs:
+  Update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          echo test > $(date +%s).txt
+          git config user.name github-actions
+          git config user.email github-actions@example.com
+          git commit -am "add file"
+          git push origin master
